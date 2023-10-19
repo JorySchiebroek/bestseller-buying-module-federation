@@ -3,9 +3,7 @@ import { Button } from "@buying/library/components/Button";
 
 const StyleCard = lazy(() => import("style_card/StyleCard"));
 
-export default function StylesPage() {
-  const [openStyleNumber, setOpenStyleNumber] = useState();
-
+export default function StylesPage({ openStyleNumber, setOpenStyleNumber }) {
   return (
     <div>
       <h1>Styles Page</h1>
@@ -14,7 +12,7 @@ export default function StylesPage() {
       {!!openStyleNumber && (
         <React.Suspense fallback="LOADING">
           <div>
-            <StyleCard src="styles" styleNumber={openStyleNumber} />
+            <StyleCard src="styles" styleNumber={openStyleNumber} onClose={() => void setOpenStyleNumber(null)} />
           </div>
         </React.Suspense>
       )}
