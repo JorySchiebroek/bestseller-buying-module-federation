@@ -1,4 +1,4 @@
-# microfrontend-lerna-module-federation
+# bestseller-buying-module-federation
 
 Micro frontend monorepo setup with Lerna and Module Federation.
 
@@ -17,11 +17,15 @@ You can also use npm workspaces
 
 #### Develop
 
-    yarn develop
+    yarn dev
 
 or (with previews)
 
-    WITH_PREVIEWS=1 yarn develop
+    WITH_PREVIEWS=1 yarn dev
+
+or (with previews and scoped modules)
+
+    WITH_PREVIEWS=1 yarn dev --scope @buying/style-card
 
 #### Single remote production build
 

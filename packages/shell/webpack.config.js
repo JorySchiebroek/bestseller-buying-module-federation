@@ -20,6 +20,7 @@ module.exports = {
         collections_page: "collections_page",
         styles_page: "styles_page",
         purchase_orders_page: "purchase_orders_page",
+        style_card: "style_card",
       },
       shared: [
         {

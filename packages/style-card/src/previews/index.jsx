@@ -1,6 +1,5 @@
-import React from "react";
 import ReactDOM from "react-dom";
 
 import StyleCard from "../StyleCard";
 
-ReactDOM.render(<StyleCard />, document.getElementById("root"));
+ReactDOM.render(<StyleCard src="Independantly!" styleNumber={9999} />, document.getElementById("root"));

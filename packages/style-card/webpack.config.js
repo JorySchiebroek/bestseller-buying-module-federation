@@ -12,7 +12,6 @@ module.exports = withPreviews((usePreviews) => ({
       filename: "styleCardRemoteEntry.js",
       exposes: {
         "./StyleCard": "./src/StyleCard",
-        "./UpsellModal": "./src/UpsellModal",
       },
       // make dependencies eager for preview to work
       shared: [

@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useContext } from "react";
 
 import { Button } from "@buying/library/components/Button";
