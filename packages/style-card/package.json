@@ -1,6 +1,6 @@
 {
   "version": "0.0.0",
-  "name": "@joryschiebroek/style-card",
+  "name": "@buying/style-card",
   "scripts": {
     "start": "ws -d build --spa index.html --port 8086 -z",
     "build": "NODE_ENV=production webpack",

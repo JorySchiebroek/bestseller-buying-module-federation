@@ -1,6 +1,6 @@
 {
   "version": "0.0.0",
-  "name": "@joryschiebroek/shell",
+  "name": "@buying/shell",
   "scripts": {
     "start": "ws -d build --spa index.html --port 8080 -z",
     "build": "NODE_ENV=production webpack",

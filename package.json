@@ -13,7 +13,7 @@
   "workspaces": [
     "packages/*"
   ],
-  "author": "Michal Zalecki <michal@joryschiebroek.com>",
+  "author": "Jory Schiebroek <joryschiebroek@gmail.com>",
   "dependencies": {
     "lerna": "4.0.0"
   },

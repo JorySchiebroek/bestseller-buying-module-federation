@@ -6,7 +6,7 @@ WORKDIR /home/app
 RUN npm install --global npm
 COPY package.json /home/app/
 COPY package-lock.json /home/app/
-COPY packages/ds/package.json /home/app/packages/ds/
+COPY packages/library/package.json /home/app/packages/library/
 COPY packages/products/package.json /home/app/packages/products/
 COPY packages/collections_page/package.json /home/app/packages/collections_page/
 COPY packages/styles_page/package.json /home/app/packages/styles_page/

@@ -5,7 +5,7 @@ WORKDIR /home/app
 # Yarn
 COPY package.json /home/app/
 COPY yarn.lock /home/app/
-COPY packages/ds/package.json /home/app/packages/ds/
+COPY packages/library/package.json /home/app/packages/library/
 COPY packages/products/package.json /home/app/packages/products/
 COPY packages/collections_page/package.json /home/app/packages/collections_page/
 COPY packages/styles_page/package.json /home/app/packages/styles_page/

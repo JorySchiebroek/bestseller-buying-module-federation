@@ -1382,6 +1382,118 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@buying/collections-page@workspace:packages/collections-page":
+  version: 0.0.0-use.local
+  resolution: "@buying/collections-page@workspace:packages/collections-page"
+  dependencies:
+    "@babel/core": 7.13.15
+    "@babel/preset-env": 7.13.15
+    "@babel/preset-react": 7.13.13
+    "@buying/library": 0.0.0
+    babel-loader: 8.2.2
+    dotenv: 8.2.0
+    html-webpack-plugin: 5.3.1
+    prettier: 2.2.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-router-dom: ^6.17.0
+    webpack: 5.33.2
+    webpack-cli: ^4.10.0
+    webpack-dev-server: 3.11.2
+  languageName: unknown
+  linkType: soft
+
+"@buying/library@0.0.0, @buying/library@workspace:packages/library":
+  version: 0.0.0-use.local
+  resolution: "@buying/library@workspace:packages/library"
+  dependencies:
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  languageName: unknown
+  linkType: soft
+
+"@buying/purchase-orders-page@workspace:packages/purchase-orders-page":
+  version: 0.0.0-use.local
+  resolution: "@buying/purchase-orders-page@workspace:packages/purchase-orders-page"
+  dependencies:
+    "@babel/core": 7.13.15
+    "@babel/preset-env": 7.13.15
+    "@babel/preset-react": 7.13.13
+    "@buying/library": 0.0.0
+    babel-loader: 8.2.2
+    dotenv: 8.2.0
+    html-webpack-plugin: 5.3.1
+    prettier: 2.2.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-router-dom: ^6.17.0
+    webpack: 5.33.2
+    webpack-cli: ^4.10.0
+    webpack-dev-server: 3.11.2
+  languageName: unknown
+  linkType: soft
+
+"@buying/shell@workspace:packages/shell":
+  version: 0.0.0-use.local
+  resolution: "@buying/shell@workspace:packages/shell"
+  dependencies:
+    "@babel/core": 7.13.15
+    "@babel/preset-env": 7.13.15
+    "@babel/preset-react": 7.13.13
+    babel-loader: 8.2.2
+    dotenv: 8.2.0
+    html-webpack-plugin: 5.3.1
+    prettier: 2.2.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-router-dom: ^6.17.0
+    webpack: 5.33.2
+    webpack-cli: ^4.10.0
+    webpack-dev-server: 3.11.2
+  languageName: unknown
+  linkType: soft
+
+"@buying/style-card@workspace:packages/style-card":
+  version: 0.0.0-use.local
+  resolution: "@buying/style-card@workspace:packages/style-card"
+  dependencies:
+    "@babel/core": 7.13.15
+    "@babel/preset-env": 7.13.15
+    "@babel/preset-react": 7.13.13
+    babel-loader: 8.2.2
+    dotenv: 8.2.0
+    html-webpack-plugin: 5.3.1
+    prettier: 2.2.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-router-dom: ^6.17.0
+    webpack: 5.33.2
+    webpack-cli: ^4.10.0
+    webpack-dev-server: 3.11.2
+  languageName: unknown
+  linkType: soft
+
+"@buying/styles-page@workspace:packages/styles-page":
+  version: 0.0.0-use.local
+  resolution: "@buying/styles-page@workspace:packages/styles-page"
+  dependencies:
+    "@babel/core": 7.13.15
+    "@babel/preset-env": 7.13.15
+    "@babel/preset-react": 7.13.13
+    "@buying/library": 0.0.0
+    babel-loader: 8.2.2
+    dotenv: 8.2.0
+    html-webpack-plugin: 5.3.1
+    prettier: 2.2.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-router-dom: ^6.17.0
+    webpack: 5.33.2
+    webpack-cli: ^4.10.0
+    webpack-dev-server: 3.11.2
+  languageName: unknown
+  linkType: soft
+
 "@discoveryjs/json-ext@npm:^0.5.0":
   version: 0.5.2
   resolution: "@discoveryjs/json-ext@npm:0.5.2"
@@ -1402,138 +1514,6 @@ __metadata:
   checksum: 4a473b9b32a7d4d3cfb7a614226e555091ff0c5a29a1734c28c72a182c2f6699b26fc6b5c2131dfd841e86b185aea714c72201d7c98c2fba5f17709333a67aeb
   languageName: node
   linkType: hard
-
-"@joryschiebroek/billing@workspace:packages/billing":
-  version: 0.0.0-use.local
-  resolution: "@joryschiebroek/billing@workspace:packages/billing"
-  dependencies:
-    "@babel/core": 7.13.15
-    "@babel/preset-env": 7.13.15
-    "@babel/preset-react": 7.13.13
-    babel-loader: 8.2.2
-    dotenv: 8.2.0
-    html-webpack-plugin: 5.3.1
-    prettier: 2.2.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-router-dom: ^6.17.0
-    webpack: 5.33.2
-    webpack-cli: ^4.10.0
-    webpack-dev-server: 3.11.2
-  languageName: unknown
-  linkType: soft
-
-"@joryschiebroek/collections-page@workspace:packages/collections-page":
-  version: 0.0.0-use.local
-  resolution: "@joryschiebroek/collections-page@workspace:packages/collections-page"
-  dependencies:
-    "@babel/core": 7.13.15
-    "@babel/preset-env": 7.13.15
-    "@babel/preset-react": 7.13.13
-    "@joryschiebroek/ds": 0.0.0
-    babel-loader: 8.2.2
-    dotenv: 8.2.0
-    html-webpack-plugin: 5.3.1
-    prettier: 2.2.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-router-dom: ^6.17.0
-    webpack: 5.33.2
-    webpack-cli: ^4.10.0
-    webpack-dev-server: 3.11.2
-  languageName: unknown
-  linkType: soft
-
-"@joryschiebroek/ds@0.0.0, @joryschiebroek/ds@workspace:packages/ds":
-  version: 0.0.0-use.local
-  resolution: "@joryschiebroek/ds@workspace:packages/ds"
-  dependencies:
-    react: ^18.2.0
-    react-dom: ^18.2.0
-  languageName: unknown
-  linkType: soft
-
-"@joryschiebroek/purchase-orders-page@workspace:packages/purchase-orders-page":
-  version: 0.0.0-use.local
-  resolution: "@joryschiebroek/purchase-orders-page@workspace:packages/purchase-orders-page"
-  dependencies:
-    "@babel/core": 7.13.15
-    "@babel/preset-env": 7.13.15
-    "@babel/preset-react": 7.13.13
-    "@joryschiebroek/ds": 0.0.0
-    babel-loader: 8.2.2
-    dotenv: 8.2.0
-    html-webpack-plugin: 5.3.1
-    prettier: 2.2.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-router-dom: ^6.17.0
-    webpack: 5.33.2
-    webpack-cli: ^4.10.0
-    webpack-dev-server: 3.11.2
-  languageName: unknown
-  linkType: soft
-
-"@joryschiebroek/shell@workspace:packages/shell":
-  version: 0.0.0-use.local
-  resolution: "@joryschiebroek/shell@workspace:packages/shell"
-  dependencies:
-    "@babel/core": 7.13.15
-    "@babel/preset-env": 7.13.15
-    "@babel/preset-react": 7.13.13
-    babel-loader: 8.2.2
-    dotenv: 8.2.0
-    html-webpack-plugin: 5.3.1
-    prettier: 2.2.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-router-dom: ^6.17.0
-    webpack: 5.33.2
-    webpack-cli: ^4.10.0
-    webpack-dev-server: 3.11.2
-  languageName: unknown
-  linkType: soft
-
-"@joryschiebroek/style-card@workspace:packages/style-card":
-  version: 0.0.0-use.local
-  resolution: "@joryschiebroek/style-card@workspace:packages/style-card"
-  dependencies:
-    "@babel/core": 7.13.15
-    "@babel/preset-env": 7.13.15
-    "@babel/preset-react": 7.13.13
-    babel-loader: 8.2.2
-    dotenv: 8.2.0
-    html-webpack-plugin: 5.3.1
-    prettier: 2.2.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-router-dom: ^6.17.0
-    webpack: 5.33.2
-    webpack-cli: ^4.10.0
-    webpack-dev-server: 3.11.2
-  languageName: unknown
-  linkType: soft
-
-"@joryschiebroek/styles-page@workspace:packages/styles-page":
-  version: 0.0.0-use.local
-  resolution: "@joryschiebroek/styles-page@workspace:packages/styles-page"
-  dependencies:
-    "@babel/core": 7.13.15
-    "@babel/preset-env": 7.13.15
-    "@babel/preset-react": 7.13.13
-    "@joryschiebroek/ds": 0.0.0
-    babel-loader: 8.2.2
-    dotenv: 8.2.0
-    html-webpack-plugin: 5.3.1
-    prettier: 2.2.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-router-dom: ^6.17.0
-    webpack: 5.33.2
-    webpack-cli: ^4.10.0
-    webpack-dev-server: 3.11.2
-  languageName: unknown
-  linkType: soft
 
 "@lerna/add@npm:4.0.0":
   version: 4.0.0

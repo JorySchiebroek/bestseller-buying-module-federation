@@ -1,5 +1,5 @@
 import React, { lazy, useState } from "react";
-import { Button } from "@joryschiebroek/ds/components/Button";
+import { Button } from "@buying/library/components/Button";
 
 const StyleCard = lazy(() => import("style_card/StyleCard"));
 
