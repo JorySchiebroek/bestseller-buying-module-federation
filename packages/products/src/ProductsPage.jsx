@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "@michalzalecki/ds/components/Button";
+import { Button } from "@joryschiebroek/ds/components/Button";
 
 const UpsellModal = React.lazy(() => import("app_billing/UpsellModal"));
 

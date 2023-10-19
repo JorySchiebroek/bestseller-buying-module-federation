@@ -1403,6 +1403,76 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@joryschiebroek/billing@workspace:packages/billing":
+  version: 0.0.0-use.local
+  resolution: "@joryschiebroek/billing@workspace:packages/billing"
+  dependencies:
+    "@babel/core": 7.13.15
+    "@babel/preset-env": 7.13.15
+    "@babel/preset-react": 7.13.13
+    babel-loader: 8.2.2
+    dotenv: 8.2.0
+    html-webpack-plugin: 5.3.1
+    prettier: 2.2.1
+    react: 17.0.2
+    react-dom: 17.0.2
+    react-router-dom: 5.2.0
+    webpack: 5.33.2
+    webpack-cli: ^4.10.0
+    webpack-dev-server: 3.11.2
+  languageName: unknown
+  linkType: soft
+
+"@joryschiebroek/ds@0.0.0, @joryschiebroek/ds@workspace:packages/ds":
+  version: 0.0.0-use.local
+  resolution: "@joryschiebroek/ds@workspace:packages/ds"
+  dependencies:
+    react: 17.0.2
+    react-dom: 17.0.2
+  languageName: unknown
+  linkType: soft
+
+"@joryschiebroek/products@workspace:packages/products":
+  version: 0.0.0-use.local
+  resolution: "@joryschiebroek/products@workspace:packages/products"
+  dependencies:
+    "@babel/core": 7.13.15
+    "@babel/preset-env": 7.13.15
+    "@babel/preset-react": 7.13.13
+    "@joryschiebroek/ds": 0.0.0
+    babel-loader: 8.2.2
+    dotenv: 8.2.0
+    html-webpack-plugin: 5.3.1
+    prettier: 2.2.1
+    react: 17.0.2
+    react-dom: 17.0.2
+    react-router-dom: 5.2.0
+    webpack: 5.33.2
+    webpack-cli: ^4.10.0
+    webpack-dev-server: 3.11.2
+  languageName: unknown
+  linkType: soft
+
+"@joryschiebroek/shell@workspace:packages/shell":
+  version: 0.0.0-use.local
+  resolution: "@joryschiebroek/shell@workspace:packages/shell"
+  dependencies:
+    "@babel/core": 7.13.15
+    "@babel/preset-env": 7.13.15
+    "@babel/preset-react": 7.13.13
+    babel-loader: 8.2.2
+    dotenv: 8.2.0
+    html-webpack-plugin: 5.3.1
+    prettier: 2.2.1
+    react: 17.0.2
+    react-dom: 17.0.2
+    react-router-dom: 5.2.0
+    webpack: 5.33.2
+    webpack-cli: ^4.10.0
+    webpack-dev-server: 3.11.2
+  languageName: unknown
+  linkType: soft
+
 "@lerna/add@npm:4.0.0":
   version: 4.0.0
   resolution: "@lerna/add@npm:4.0.0"
@@ -2192,76 +2262,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@michalzalecki/billing@workspace:packages/billing":
-  version: 0.0.0-use.local
-  resolution: "@michalzalecki/billing@workspace:packages/billing"
-  dependencies:
-    "@babel/core": 7.13.15
-    "@babel/preset-env": 7.13.15
-    "@babel/preset-react": 7.13.13
-    babel-loader: 8.2.2
-    dotenv: 8.2.0
-    html-webpack-plugin: 5.3.1
-    prettier: 2.2.1
-    react: 17.0.2
-    react-dom: 17.0.2
-    react-router-dom: 5.2.0
-    webpack: 5.33.2
-    webpack-cli: 4.6.0
-    webpack-dev-server: 3.11.2
-  languageName: unknown
-  linkType: soft
-
-"@michalzalecki/ds@0.0.0, @michalzalecki/ds@workspace:packages/ds":
-  version: 0.0.0-use.local
-  resolution: "@michalzalecki/ds@workspace:packages/ds"
-  dependencies:
-    react: 17.0.2
-    react-dom: 17.0.2
-  languageName: unknown
-  linkType: soft
-
-"@michalzalecki/products@workspace:packages/products":
-  version: 0.0.0-use.local
-  resolution: "@michalzalecki/products@workspace:packages/products"
-  dependencies:
-    "@babel/core": 7.13.15
-    "@babel/preset-env": 7.13.15
-    "@babel/preset-react": 7.13.13
-    "@michalzalecki/ds": 0.0.0
-    babel-loader: 8.2.2
-    dotenv: 8.2.0
-    html-webpack-plugin: 5.3.1
-    prettier: 2.2.1
-    react: 17.0.2
-    react-dom: 17.0.2
-    react-router-dom: 5.2.0
-    webpack: 5.33.2
-    webpack-cli: 4.6.0
-    webpack-dev-server: 3.11.2
-  languageName: unknown
-  linkType: soft
-
-"@michalzalecki/shell@workspace:packages/shell":
-  version: 0.0.0-use.local
-  resolution: "@michalzalecki/shell@workspace:packages/shell"
-  dependencies:
-    "@babel/core": 7.13.15
-    "@babel/preset-env": 7.13.15
-    "@babel/preset-react": 7.13.13
-    babel-loader: 8.2.2
-    dotenv: 8.2.0
-    html-webpack-plugin: 5.3.1
-    prettier: 2.2.1
-    react: 17.0.2
-    react-dom: 17.0.2
-    react-router-dom: 5.2.0
-    webpack: 5.33.2
-    webpack-cli: 4.6.0
-    webpack-dev-server: 3.11.2
-  languageName: unknown
-  linkType: soft
-
 "@nodelib/fs.scandir@npm:2.1.4":
   version: 2.1.4
   resolution: "@nodelib/fs.scandir@npm:2.1.4"
@@ -2771,36 +2771,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@webpack-cli/configtest@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@webpack-cli/configtest@npm:1.0.2"
+"@webpack-cli/configtest@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@webpack-cli/configtest@npm:1.2.0"
   peerDependencies:
     webpack: 4.x.x || 5.x.x
     webpack-cli: 4.x.x
-  checksum: d2798fd5613047d9ba3ec0a84b0b2608b2a2d60158daa7702df3c2c2f783767ee686b5d052c6a626b82e5a9d55ccab4eb76fe3c9c33e278b36f14b191cb6f0fc
+  checksum: a2726cd9ec601d2b57e5fc15e0ebf5200a8892065e735911269ac2038e62be4bfc176ea1f88c2c46ff09b4d05d4c10ae045e87b3679372483d47da625a327e28
   languageName: node
   linkType: hard
 
-"@webpack-cli/info@npm:^1.2.3":
-  version: 1.2.3
-  resolution: "@webpack-cli/info@npm:1.2.3"
+"@webpack-cli/info@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "@webpack-cli/info@npm:1.5.0"
   dependencies:
     envinfo: ^7.7.3
   peerDependencies:
     webpack-cli: 4.x.x
-  checksum: 53851ed276f619df0687de9faaa8e60b14919acf65c3dc628d0484462bd8dfcf25c9c7295aba31f0428444508ffec9b985e2c7295a14294330d6c2dc9b8a2e69
+  checksum: 7f56fe037cd7d1fd5c7428588519fbf04a0cad33925ee4202ffbafd00f8ec1f2f67d991245e687d50e0f3e23f7b7814273d56cb9f7da4b05eed47c8d815c6296
   languageName: node
   linkType: hard
 
-"@webpack-cli/serve@npm:^1.3.1":
-  version: 1.3.1
-  resolution: "@webpack-cli/serve@npm:1.3.1"
+"@webpack-cli/serve@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "@webpack-cli/serve@npm:1.7.0"
   peerDependencies:
     webpack-cli: 4.x.x
   peerDependenciesMeta:
     webpack-dev-server:
       optional: true
-  checksum: 4ba2191f2ae9b282303d942490b4aa0d80a67a995ffa1e0f501111808851f085271e418979b0bfc7dfb157c889e81d3a30350524b1d5cf21a66bbc5c30320dbd
+  checksum: d475e8effa23eb7ff9a48b14d4de425989fd82f906ce71c210921cc3852327c22873be00c35e181a25a6bd03d424ae2b83e7f3b3f410ac7ee31b128ab4ac7713
   languageName: node
   linkType: hard
 
@@ -2945,13 +2945,6 @@ __metadata:
   version: 3.2.4
   resolution: "ansi-colors@npm:3.2.4"
   checksum: 026c51880e9f8eb59b112669a87dbea4469939ff94b131606303bbd697438a6691b16b9db3027aa9bf132a244214e83ab1508b998496a34d2aea5b437ac9e62d
-  languageName: node
-  linkType: hard
-
-"ansi-colors@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "ansi-colors@npm:4.1.1"
-  checksum: 138d04a51076cb085da0a7e2d000c5c0bb09f6e772ed5c65c53cb118d37f6c5f1637506d7155fb5f330f0abcf6f12fa2e489ac3f8cdab9da393bf1bb4f9a32b0
   languageName: node
   linkType: hard
 
@@ -3928,6 +3921,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"colorette@npm:^2.0.14":
+  version: 2.0.20
+  resolution: "colorette@npm:2.0.20"
+  checksum: 0c016fea2b91b733eb9f4bcdb580018f52c0bc0979443dad930e5037a968237ac53d9beb98e218d2e9235834f8eebce7f8e080422d6194e957454255bde71d3d
+  languageName: node
+  linkType: hard
+
 "columnify@npm:^1.5.4":
   version: 1.5.4
   resolution: "columnify@npm:1.5.4"
@@ -4776,15 +4776,6 @@ __metadata:
     graceful-fs: ^4.2.4
     tapable: ^2.2.0
   checksum: 91916405697c04512e4f29cf0f0dcf10b03751f7b6f51fda72661ddc5c79779d404335f933caa202f5e81f00944fe3a1cf180cc6b53fdaff2c9ce9d0f310f704
-  languageName: node
-  linkType: hard
-
-"enquirer@npm:^2.3.6":
-  version: 2.3.6
-  resolution: "enquirer@npm:2.3.6"
-  dependencies:
-    ansi-colors: ^4.1.1
-  checksum: 1c0911e14a6f8d26721c91e01db06092a5f7675159f0261d69c403396a385afd13dd76825e7678f66daffa930cfaa8d45f506fb35f818a2788463d022af1b884
   languageName: node
   linkType: hard
 
@@ -11223,13 +11214,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"v8-compile-cache@npm:^2.2.0":
-  version: 2.3.0
-  resolution: "v8-compile-cache@npm:2.3.0"
-  checksum: adb0a271eaa2297f2f4c536acbfee872d0dd26ec2d76f66921aa7fc437319132773483344207bdbeee169225f4739016d8d2dbf0553913a52bb34da6d0334f8e
-  languageName: node
-  linkType: hard
-
 "validate-npm-package-license@npm:^3.0.1, validate-npm-package-license@npm:^3.0.4":
   version: 3.0.4
   resolution: "validate-npm-package-license@npm:3.0.4"
@@ -11309,23 +11293,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-cli@npm:4.6.0":
-  version: 4.6.0
-  resolution: "webpack-cli@npm:4.6.0"
+"webpack-cli@npm:^4.10.0":
+  version: 4.10.0
+  resolution: "webpack-cli@npm:4.10.0"
   dependencies:
     "@discoveryjs/json-ext": ^0.5.0
-    "@webpack-cli/configtest": ^1.0.2
-    "@webpack-cli/info": ^1.2.3
-    "@webpack-cli/serve": ^1.3.1
-    colorette: ^1.2.1
+    "@webpack-cli/configtest": ^1.2.0
+    "@webpack-cli/info": ^1.5.0
+    "@webpack-cli/serve": ^1.7.0
+    colorette: ^2.0.14
     commander: ^7.0.0
-    enquirer: ^2.3.6
-    execa: ^5.0.0
+    cross-spawn: ^7.0.3
     fastest-levenshtein: ^1.0.12
     import-local: ^3.0.2
     interpret: ^2.2.0
     rechoir: ^0.7.0
-    v8-compile-cache: ^2.2.0
     webpack-merge: ^5.7.3
   peerDependencies:
     webpack: 4.x.x || 5.x.x
@@ -11340,7 +11322,7 @@ __metadata:
       optional: true
   bin:
     webpack-cli: bin/cli.js
-  checksum: 7f3fd514eb4729e736e7b3255c4b859fa6d11b3659e96c41b400c8bbbf7591257808c1189354d2047f29a69ebdce9b0827748716568d066e691a304c6835b380
+  checksum: 2ff5355ac348e6b40f2630a203b981728834dca96d6d621be96249764b2d0fc01dd54edfcc37f02214d02935de2cf0eefd6ce689d970d154ef493f01ba922390
   languageName: node
   linkType: hard
 
