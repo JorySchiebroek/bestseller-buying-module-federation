@@ -1,1 +1,1 @@
-alert("app_products");
+alert("purchase_orders_page");

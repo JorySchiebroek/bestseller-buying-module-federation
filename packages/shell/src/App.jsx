@@ -11,7 +11,6 @@ const CollectionsPage = lazy(() => import("collections_page/CollectionsPage"));
 const StylesPage = lazy(() => import("styles_page/StylesPage"));
 const PurchaseOrdersPage = lazy(() => import("purchase_orders_page/PurchaseOrdersPage"));
 
-const ProductsPage = lazy(() => import("app_products/ProductsPage"));
 const BillingPage = lazy(() => import("app_billing/BillingPage"));
 
 export function App() {
@@ -72,14 +71,6 @@ export function App() {
                 element={(
                   <Suspense fallback={(<PageLoading />)}>
                     <BillingPage />
-                  </Suspense>
-                )}
-              />
-              <Route
-                path="/"
-                element={(
-                  <Suspense fallback={(<PageLoading />)}>
-                    <ProductsPage />
                   </Suspense>
                 )}
               />
