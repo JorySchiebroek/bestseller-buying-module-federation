@@ -20,6 +20,9 @@ export function App() {
       <div style={{ height: '100vh' }}>
         <div style={{ display: 'flex', flexDirection: 'row', height: '100%' }}>
           <div style={{ border: '1px solid black', width: '250px' }}>
+            <div style={{ display: 'flex', flexGrow: 1, justifyContent: 'center' }}>
+              <h3>Bestone Buying</h3>
+            </div>
             <nav>
               <ul>
                 <li>
