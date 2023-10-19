@@ -8,7 +8,7 @@ module.exports = {
   ...config,
 
   entry: {
-    index: "./src/index.jsx",
+    index: "./src/index.tsx",
   },
 
   plugins: [

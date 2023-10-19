@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { lazy, Suspense, useState } from "react";
-import { BrowserRouter, Routes, Route, Outlet, Link } from "react-router-dom";
+import { lazy, Suspense, useState } from 'react';
+import { BrowserRouter, Routes, Route, Outlet, Link } from 'react-router-dom';
 
-import { BuyingThemeProvider, BuyingThemeContext } from "@buying/library/components/BuyingThemeProvider";
+import { BuyingThemeProvider, BuyingThemeContext } from '@buying/library/components/BuyingThemeProvider';
 import { PageLoading } from './PageLoading/PageLoading';
 
 import "./styles.css";
