@@ -12,9 +12,6 @@ module.exports = withPreviews({
       exposes: {
         "./CollectionsPage": "./src/CollectionsPage",
       },
-      remotes: {
-        app_billing: "app_billing",
-      },
       // shared: [{ react: { singleton: true }, "react-dom": { singleton: true } }],
       shared: ["react", "react-dom", "react-router-dom"],
     }),

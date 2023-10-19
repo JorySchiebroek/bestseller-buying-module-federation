@@ -6,12 +6,12 @@ WORKDIR /home/app
 RUN npm install --global npm
 COPY package.json /home/app/
 COPY package-lock.json /home/app/
-COPY packages/billing/package.json /home/app/packages/billing/
 COPY packages/ds/package.json /home/app/packages/ds/
 COPY packages/products/package.json /home/app/packages/products/
 COPY packages/collections_page/package.json /home/app/packages/collections_page/
 COPY packages/styles_page/package.json /home/app/packages/styles_page/
 COPY packages/purchase_orders_page/package.json /home/app/packages/purchase_orders_page/
+COPY packages/style_card/package.json /home/app/packages/style_card/
 COPY packages/shell/package.json /home/app/packages/shell/
 RUN npm ci
 

@@ -17,7 +17,6 @@ module.exports = {
       name: "app_shell",
       library: { type: "var", name: "app_shell" },
       remotes: {
-        app_billing: "app_billing",
         collections_page: "collections_page",
         styles_page: "styles_page",
         purchase_orders_page: "purchase_orders_page",

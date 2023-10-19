@@ -13,7 +13,6 @@ module.exports = withPreviews({
         "./StylesPage": "./src/StylesPage",
       },
       remotes: {
-        app_billing: "app_billing",
         style_card: "style_card",
       },
       // shared: [{ react: { singleton: true }, "react-dom": { singleton: true } }],

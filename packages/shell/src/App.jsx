@@ -11,8 +11,6 @@ const CollectionsPage = lazy(() => import("collections_page/CollectionsPage"));
 const StylesPage = lazy(() => import("styles_page/StylesPage"));
 const PurchaseOrdersPage = lazy(() => import("purchase_orders_page/PurchaseOrdersPage"));
 
-const BillingPage = lazy(() => import("app_billing/BillingPage"));
-
 export function App() {
   return (
     <BrowserRouter>
@@ -32,9 +30,6 @@ export function App() {
                 </li>
                 <li>
                   <Link to="/orders">Orders</Link>
-                </li>
-                <li>
-                  <Link to="/billing">Billing</Link>
                 </li>
               </ul>
             </nav>
@@ -62,15 +57,6 @@ export function App() {
                 element={(
                   <Suspense fallback={(<PageLoading />)}>
                     <PurchaseOrdersPage />
-                  </Suspense>
-                )}
-              />
-
-              <Route
-                path="/billing"
-                element={(
-                  <Suspense fallback={(<PageLoading />)}>
-                    <BillingPage />
                   </Suspense>
                 )}
               />
