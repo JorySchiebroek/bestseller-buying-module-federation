@@ -1,0 +1,30 @@
+{
+  "version": "0.0.0",
+  "name": "@joryschiebroek/purchase-orders-page",
+  "scripts": {
+    "start": "ws -d build --spa index.html --port 8085 -z",
+    "build": "NODE_ENV=production webpack",
+    "watch": "webpack --watch",
+    "develop": "webpack serve --port 8085",
+    "clean": "rm -rf build"
+  },
+  "dependencies": {
+    "@babel/core": "7.13.15",
+    "@babel/preset-env": "7.13.15",
+    "@babel/preset-react": "7.13.13",
+    "@joryschiebroek/ds": "0.0.0",
+    "babel-loader": "8.2.2",
+    "dotenv": "8.2.0",
+    "html-webpack-plugin": "5.3.1",
+    "prettier": "2.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.17.0",
+    "webpack": "5.33.2"
+  },
+  "devDependencies": {
+    "prettier": "2.2.1",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "3.11.2"
+  }
+}

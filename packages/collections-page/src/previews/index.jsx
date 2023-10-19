@@ -1,0 +1,1 @@
+alert("collections_page");

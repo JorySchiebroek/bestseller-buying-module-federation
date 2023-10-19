@@ -1,0 +1,1 @@
+alert("styles_page");

@@ -1,15 +1,15 @@
 import React from "react";
 
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, Outlet, Link } from "react-router-dom";
 
 import { PageLoading } from './PageLoading/PageLoading';
 
 import "./styles.css";
 
-const CollectionsPage = lazy(() => import("app_products/ProductsPage"));
-const StylesPage = lazy(() => import("app_products/ProductsPage"));
-const PurchaseOrdersPage = lazy(() => import("app_products/ProductsPage"));
+const CollectionsPage = lazy(() => import("collections_page/CollectionsPage"));
+const StylesPage = lazy(() => import("styles_page/StylesPage"));
+const PurchaseOrdersPage = lazy(() => import("purchase_orders_page/PurchaseOrdersPage"));
 
 const ProductsPage = lazy(() => import("app_products/ProductsPage"));
 const BillingPage = lazy(() => import("app_billing/BillingPage"));
@@ -45,42 +45,42 @@ export function App() {
               <Route
                 path="/collections"
                 element={(
-                  <React.Suspense fallback={(<PageLoading />)}>
+                  <Suspense fallback={(<PageLoading />)}>
                     <CollectionsPage />
-                  </React.Suspense>
+                  </Suspense>
                 )}
               />
               <Route
                 path="/styles"
                 element={(
-                  <React.Suspense fallback={(<PageLoading />)}>
+                  <Suspense fallback={(<PageLoading />)}>
                     <StylesPage />
-                  </React.Suspense>
+                  </Suspense>
                 )}
               />
               <Route
                 path="/orders"
                 element={(
-                  <React.Suspense fallback={(<PageLoading />)}>
+                  <Suspense fallback={(<PageLoading />)}>
                     <PurchaseOrdersPage />
-                  </React.Suspense>
+                  </Suspense>
                 )}
               />
 
               <Route
                 path="/billing"
                 element={(
-                  <React.Suspense fallback={(<PageLoading />)}>
+                  <Suspense fallback={(<PageLoading />)}>
                     <BillingPage />
-                  </React.Suspense>
+                  </Suspense>
                 )}
               />
               <Route
                 path="/"
                 element={(
-                  <React.Suspense fallback={(<PageLoading />)}>
+                  <Suspense fallback={(<PageLoading />)}>
                     <ProductsPage />
-                  </React.Suspense>
+                  </Suspense>
                 )}
               />
             </Routes>

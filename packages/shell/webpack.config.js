@@ -19,6 +19,9 @@ module.exports = {
       remotes: {
         app_billing: "app_billing",
         app_products: "app_products",
+        collections_page: "collections_page",
+        styles_page: "styles_page",
+        purchase_orders_page: "purchase_orders_page",
       },
       shared: [
         {
