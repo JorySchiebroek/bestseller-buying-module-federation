@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React, { lazy, useState } from "react";
 import { Button } from "@joryschiebroek/ds/components/Button";
 
-const UpsellModal = React.lazy(() => import("app_billing/UpsellModal"));
+const StyleCard = lazy(() => import("style_card/StyleCard"));
 
 export default function PurchaseOrdersPage() {
-  const [showUpsell, setShowUpsell] = useState();
+  const [openStyleNumber, setOpenStyleNumber] = useState();
 
   return (
     <div>
       <h1>Purchase Orders Page</h1>
-      <Button onClick={() => setShowUpsell(true)}>Business</Button>
-      {showUpsell && (
+      <Button onClick={() => setOpenStyleNumber(1111)}>Open style 1111</Button>
+      {!!openStyleNumber && (
         <React.Suspense fallback="LOADING">
           <div>
-            <UpsellModal />
+            <StyleCard src="purchase orders" styleNumber={openStyleNumber} />
           </div>
         </React.Suspense>
       )}

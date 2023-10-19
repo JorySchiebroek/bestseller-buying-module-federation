@@ -14,6 +14,7 @@ module.exports = withPreviews({
       },
       remotes: {
         app_billing: "app_billing",
+        style_card: "style_card",
       },
       // shared: [{ react: { singleton: true }, "react-dom": { singleton: true } }],
       shared: ["react", "react-dom", "react-router-dom"],
