@@ -3,14 +3,39 @@
 version: 2.1
 
 commands:
+  set-env-var:
+    description: Set env variable for a package
+    parameters:
+      package_url:
+        default: ""
+        type: string
+      env_var_name:
+        default: ""
+        type: string
+    steps:
+      - run:
+          name: "Check for changes in <<parameters.package_url>>"
+          # "Since every run step is a new shell, environment variables are not shared across steps.
+          # If you need an environment variable to be accessible in more than one step, export the value using BASH_ENV."
+          # See: https://circleci.com/docs/set-environment-variable/#set-an-environment-variable-in-a-step
+          command: |
+            if [[ $(git diff --name-only HEAD^ HEAD packages/<<parameters.package_url>>) ]]; then
+              echo "Changes detected in <<parameters.package_url>>"
+              echo "export <<parameters.env_var_name>>=true" >> $BASH_ENV
+            else
+              echo "No changes detected in <<parameters.package_url>>"
+              echo "export <<parameters.env_var_name>>=false" >> $BASH_ENV
+            fi
   import-env-vars:
-    # description: Import env variables
+    description: Import env variables
     steps:
       - attach_workspace:
           at: .
       # - checkout
-      - run: |
-          cat bash.env >> $BASH_ENV
+      - run:
+          name: Import bash file
+          command: |
+            cat bash.env >> $BASH_ENV
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
@@ -24,38 +49,18 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
-      - run:
-          name: "Check for changes in collections-page"
-          # "Since every run step is a new shell, environment variables are not shared across steps.
-          # If you need an environment variable to be accessible in more than one step, export the value using BASH_ENV."
-          # See: https://circleci.com/docs/set-environment-variable/#set-an-environment-variable-in-a-step
-          command: |
-            if [[ $(git diff --name-only HEAD^ HEAD packages/collections-page) ]]; then
-              echo "Changes detected in the collections-page micro-frontend"
-              echo "export COLLECTIONS_PAGE_CHANGED=true" >> $BASH_ENV
-            else
-              echo "No changes in collections-page micro-frontend"
-              echo "export COLLECTIONS_PAGE_CHANGED=false" >> $BASH_ENV
-            fi
-      - run:
-          name: "Check for changes in styles-page"
-          # "Since every run step is a new shell, environment variables are not shared across steps.
-          # If you need an environment variable to be accessible in more than one step, export the value using BASH_ENV."
-          # See: https://circleci.com/docs/set-environment-variable/#set-an-environment-variable-in-a-step
-          command: |
-            if [[ $(git diff --name-only HEAD^ HEAD packages/styles-page) ]]; then
-              echo "Changes detected in the styles-page micro-frontend"
-              echo "export STYLES_PAGE_CHANGED=true" >> $BASH_ENV
-            else
-              echo "No changes in styles-page micro-frontend"
-              echo "export STYLES_PAGE_CHANGED=false" >> $BASH_ENV
-            fi
+      - set-env-var:
+          package_url: collections-page
+          env_var_name: COLLECTIONS_PAGE_CHANGED
+      - set-env-var:
+          package_url: styles-page
+          env_var_name: STYLES_PAGE_CHANGED
       - run:
           name: Results
           command: |
             source $BASH_ENV
-            echo Collections page: $COLLECTIONS_PAGE_CHANGED
-            echo Styles page: $STYLES_PAGE_CHANGED
+            echo $COLLECTIONS_PAGE_CHANGED for collections-page
+            echo $STYLES_PAGE_CHANGED for styles-page
       - run: |
           cp $BASH_ENV bash.env
       - persist_to_workspace:
@@ -72,6 +77,26 @@ jobs:
     steps:
       - import-env-vars
       # Install dependencies and build the "settings_page" package
+      - run:
+          name: Lint "collections-page"
+          command: |
+            source $BASH_ENV
+            if [ "$COLLECTIONS_PAGE_CHANGED" == "true" ]; then
+              cd packages/collections-page
+              echo "Doing the fake lint"
+            else
+              echo "No changes in packages/collections-page, skipping lint"
+            fi
+      - run:
+          name: Test "collections-page"
+          command: |
+            source $BASH_ENV
+            if [ "$COLLECTIONS_PAGE_CHANGED" == "true" ]; then
+              cd packages/collections-page
+              echo "Doing the fake test"
+            else
+              echo "No changes in packages/collections-page, skipping test"
+            fi
       - run:
           name: Build "collections-page"
           command: |
@@ -94,6 +119,26 @@ jobs:
       - import-env-vars
       # Install dependencies and build the "settings_page" package
       - run:
+          name: Lint "styles-page"
+          command: |
+            source $BASH_ENV
+            if [ "$STYLES_PAGE_CHANGED" == "true" ]; then
+              cd packages/styles-page
+              echo "Doing the fake lint"
+            else
+              echo "No changes in packages/styles-page, skipping lint"
+            fi
+      - run:
+          name: Test "styles-page"
+          command: |
+            source $BASH_ENV
+            if [ "$STYLES_PAGE_CHANGED" == "true" ]; then
+              cd packages/styles-page
+              echo "Doing the fake test"
+            else
+              echo "No changes in packages/styles-page, skipping test"
+            fi
+      - run:
           name: Build "styles-page"
           command: |
             source $BASH_ENV
@@ -109,9 +154,10 @@ jobs:
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
+  # We can only have ONE workflow if we want to benefit from sharing env variables
   deploy-micro-frontends:
     jobs:
-      # First we check for changes in the micro-frontends, and set environment variables accordingly
+      # Check each micro-frontend for changes, and set our env variables accordingly
       - check-for-changes
       # Then we go through each changed micro-frontends
       - collections-page:
