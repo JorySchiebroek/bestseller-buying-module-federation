@@ -63,7 +63,7 @@ jobs:
       # Load env variables
       - attach_workspace:
           at: .
-      - checkout
+      # - checkout
       - run: |
           cat bash.env >> $BASH_ENV
       # Install dependencies and build the "settings_page" package
@@ -89,7 +89,7 @@ jobs:
       # Load env variables
       - attach_workspace:
           at: .
-      - checkout
+      # - checkout
       - run: |
           cat bash.env >> $BASH_ENV
       # Install dependencies and build the "settings_page" package
