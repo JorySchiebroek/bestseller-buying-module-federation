@@ -53,14 +53,32 @@ jobs:
           package_url: collections-page
           env_var_name: COLLECTIONS_PAGE_CHANGED
       - set-env-var:
+          package_url: library
+          env_var_name: LIBRARY_CHANGED
+      - set-env-var:
+          package_url: purchase-orders-page
+          env_var_name: PURCHASE_ORDERS_PAGE_CHANGED
+      - set-env-var:
+          package_url: shell
+          env_var_name: SHELL_CHANGED
+      - set-env-var:
+          package_url: style-card
+          env_var_name: STYLE_CARD_CHANGED
+      - set-env-var:
           package_url: styles-page
           env_var_name: STYLES_PAGE_CHANGED
       - run:
           name: Results
           command: |
             source $BASH_ENV
-            echo $COLLECTIONS_PAGE_CHANGED for collections-page
-            echo $STYLES_PAGE_CHANGED for styles-page
+            echo "====[ essentials ]===="
+            echo library was $(($LIBRARY_CHANGED == "true" ? "changed" : "not changed"))
+            echo shell was $(($SHELL_CHANGED == "true" ? "changed" : "not changed"))
+            echo "====[ micro-frontends ]===="
+            echo collections-page was $(($COLLECTIONS_PAGE_CHANGED == "true" ? "changed" : "not changed"))
+            echo purchase-orders-page was $(($PURCHASE_ORDERS_PAGE_CHANGED == "true" ? "changed" : "not changed"))
+            echo style-card was $(($STYLE_CARD_CHANGED == "true" ? "changed" : "not changed"))
+            echo styles-page was $(($STYLES_PAGE_CHANGED == "true" ? "changed" : "not changed"))
       - run: |
           cp $BASH_ENV bash.env
       - persist_to_workspace:
