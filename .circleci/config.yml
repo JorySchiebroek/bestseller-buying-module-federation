@@ -15,19 +15,24 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-      - run:
           name: "Check for changes in collections-page"
+          # "Since every run step is a new shell, environment variables are not shared across steps.
+          # If you need an environment variable to be accessible in more than one step, export the value using BASH_ENV."
+          # See: https://circleci.com/docs/set-environment-variable/#set-an-environment-variable-in-a-step
           command: |
             if [[ $(git diff --name-only HEAD^ HEAD packages/collections-page) ]]; then
               echo "Changes detected in the collections-page micro-frontend"
-              export COLLECTIONS_PAGE_CHANGED=true
+              # export COLLECTIONS_PAGE_CHANGED=true
+              echo 'export COLLECTIONS_PAGE_CHANGED="true"' >> "$BASH_ENV"
             else
               echo "No changes in collections-page micro-frontend"
-              export COLLECTIONS_PAGE_CHANGED=false
+              # export COLLECTIONS_PAGE_CHANGED=false
+              echo 'export COLLECTIONS_PAGE_CHANGED="false"' >> "$BASH_ENV"
             fi
       # Install dependencies and build the "settings_page" package
+      - run:
+          name: "Check env variable value"
+          command: "echo $COLLECTIONS_PAGE_CHANGED"
       - run:
           name: Build "collections-page"
           command: |
