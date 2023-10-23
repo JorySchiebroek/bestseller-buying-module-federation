@@ -10,7 +10,7 @@ export default function CollectionsPage() {
     <div>
       <h1>Collections Page</h1>
       <p>isDarkMode: {String(isDarkMode)}</p>
-      <Button onClick={() => toggleTheme()}>Toggle dark mode</Button>
+      <Button onClick={() => toggleTheme()}>toggle dark mode</Button>
     </div>
   );
 }
