@@ -2,6 +2,16 @@
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
 
+commands:
+  import-env-vars:
+    # description: Import env variables
+    steps:
+      - attach_workspace:
+          at: .
+      # - checkout
+      - run: |
+          cat bash.env >> $BASH_ENV
+
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
@@ -60,12 +70,7 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
-      # Load env variables
-      - attach_workspace:
-          at: .
-      # - checkout
-      - run: |
-          cat bash.env >> $BASH_ENV
+      - import-env-vars
       # Install dependencies and build the "settings_page" package
       - run:
           name: Build "collections-page"
@@ -86,12 +91,7 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
-      # Load env variables
-      - attach_workspace:
-          at: .
-      # - checkout
-      - run: |
-          cat bash.env >> $BASH_ENV
+      - import-env-vars
       # Install dependencies and build the "settings_page" package
       - run:
           name: Build "styles-page"
@@ -113,7 +113,7 @@ workflows:
     jobs:
       # First we check for changes in the micro-frontends, and set environment variables accordingly
       - check-for-changes
-      # Then we build the micro-frontends that have changed
+      # Then we go through each changed micro-frontends
       - collections-page:
           requires:
             - check-for-changes
