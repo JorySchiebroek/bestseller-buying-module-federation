@@ -22,12 +22,10 @@ jobs:
           command: |
             if [[ $(git diff --name-only HEAD^ HEAD packages/collections-page) ]]; then
               echo "Changes detected in the collections-page micro-frontend"
-              # export COLLECTIONS_PAGE_CHANGED=true
-              echo 'export COLLECTIONS_PAGE_CHANGED="true"' >> "$BASH_ENV"
+              echo "export COLLECTIONS_PAGE_CHANGED=true" >> $BASH_ENV
             else
               echo "No changes in collections-page micro-frontend"
-              # export COLLECTIONS_PAGE_CHANGED=false
-              echo 'export COLLECTIONS_PAGE_CHANGED="false"' >> "$BASH_ENV"
+              echo "export COLLECTIONS_PAGE_CHANGED=false" >> $BASH_ENV
             fi
       # Install dependencies and build the "settings_page" package
       - run:
