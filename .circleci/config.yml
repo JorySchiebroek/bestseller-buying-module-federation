@@ -31,11 +31,14 @@ jobs:
             fi
       # Install dependencies and build the "settings_page" package
       - run:
-          name: "Check env variable value"
-          command: "echo $COLLECTIONS_PAGE_CHANGED"
+          name: Check env variable value
+          command: |
+            source $BASH_ENV
+            echo $COLLECTIONS_PAGE_CHANGED
       - run:
           name: Build "collections-page"
           command: |
+            source $BASH_ENV
             if [ "$COLLECTIONS_PAGE_CHANGED" == "true" ]; then
               cd packages/collections-page
               npm install
