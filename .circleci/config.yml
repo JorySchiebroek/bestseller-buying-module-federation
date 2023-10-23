@@ -5,7 +5,7 @@ version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
-  say-hello:
+  collections-page:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
     docker:
@@ -17,10 +17,32 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+      - run:
+          name: "Check for changes in collections-page"
+          command: |
+            if [[ $(git diff --name-only HEAD^ HEAD packages/collections-page) ]]; then
+              echo "Changes detected in the collections-page micro-frontend"
+              export COLLECTIONS_PAGE_CHANGED=true
+            else
+              echo "No changes in collections-page micro-frontend"
+              export COLLECTIONS_PAGE_CHANGED=false
+            fi
+      # Install dependencies and build the "settings_page" package
+      - run:
+          name: Build "collections-page"
+          command: |
+            if [ "$COLLECTIONS_PAGE_CHANGED" == "true" ]; then
+              cd packages/collections-page
+              npm install
+              npm run build
+            else
+              echo "No changes in packages/collections-page, skipping build"
+            fi
+
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  deploy-micro-frontends:
     jobs:
-      - say-hello
+      - collections-page
