@@ -9,7 +9,6 @@ export default function StylesPage({ setOpenStyleNumber }) {
       <h1>Styles Page</h1>
       <Button onClick={() => setOpenStyleNumber(1111)}>Open style 1111</Button>
       <Button onClick={() => setOpenStyleNumber(2222)}>Open style 2222</Button>
-      <Button onClick={() => setOpenStyleNumber(3333)}>Open style 3333</Button>
     </div>
   );
 }
