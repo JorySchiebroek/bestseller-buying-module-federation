@@ -67,18 +67,6 @@ jobs:
       - set-env-var:
           package_url: styles-page
           env_var_name: STYLES_PAGE_CHANGED
-      - run:
-          name: Results
-          command: |
-            source $BASH_ENV
-            echo "====[ essentials ]===="
-            echo library was $(($LIBRARY_CHANGED == "true" ? "changed" : "not changed"))
-            echo shell was $(($SHELL_CHANGED == "true" ? "changed" : "not changed"))
-            echo "====[ micro-frontends ]===="
-            echo collections-page was $(($COLLECTIONS_PAGE_CHANGED == "true" ? "changed" : "not changed"))
-            echo purchase-orders-page was $(($PURCHASE_ORDERS_PAGE_CHANGED == "true" ? "changed" : "not changed"))
-            echo style-card was $(($STYLE_CARD_CHANGED == "true" ? "changed" : "not changed"))
-            echo styles-page was $(($STYLES_PAGE_CHANGED == "true" ? "changed" : "not changed"))
       - run: |
           cp $BASH_ENV bash.env
       - persist_to_workspace:
